@@ -19,6 +19,6 @@ def test_ai_endpoint_empty_prompt():
         "prompt": ""
     }
 
-    response = client.post("/ai/generate", json=payload)
+    response = client.post("/ai/generate", json=payload) 
 
     assert response.status_code == 422
