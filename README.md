@@ -31,7 +31,8 @@ ai-backend-api/
 │
 ├── config/
 │   ├── __init__.py
-│   └── settings.py
+│   ├── settings.py
+│   └── logger.py
 │
 └── tests/
     ├── __init__.py
@@ -96,6 +97,14 @@ Response
 {
   "response": "FastAPI is a modern Python web framework..."
 }
+
+📝 Logging & Monitoring
+
+Centralized structured logging using config/logger.py
+
+Logs include timestamps, levels, module names, and messages
+
+Compatible with Docker and cloud monitoring
 
 🧪 Next Improvements (Roadmap)
 
