@@ -18,12 +18,16 @@ Ready for testing, scaling, and deployment
 
 Interactive API documentation (Swagger UI)
 
+Continuous Integration / Continuous Deployment with GitHub Actions
+
 🏗️ Project Structure
 ai-backend-api/
 │
 ├── main.py
 ├── requirements.txt
 ├── .env.example
+├── Dockerfile
+├── .dockerignore
 │
 ├── services/
 │   └── llm_service.py
@@ -41,8 +45,9 @@ ai-backend-api/
 │   ├── test_health.py
 │   └── test_ai_endpoint.py
 │
-├── Dockerfile
-└── .dockerignore
+└── .github/
+    └── workflows/
+        └── ci.yml
 
 🛠️ Technologies
 
@@ -59,6 +64,8 @@ Uvicorn
 python-dotenv
 
 Docker
+
+GitHub Actions (CI/CD)
 
 ⚙️ Setup
 1️⃣ Clone the repository
@@ -122,9 +129,27 @@ Logs include timestamps, levels, module names, and messages
 
 Compatible with Docker and cloud monitoring
 
-🧪 Next Improvements (Roadmap)
+🧪 CI/CD (GitHub Actions)
 
-Unit and integration tests
+Workflow located at .github/workflows/ci.yml
+
+Runs automatically on push or pull request to main
+
+Steps:
+
+Checkout repository
+
+Setup Python 3.10
+
+Install dependencies
+
+Lint code using flake8
+
+Run tests using pytest
+
+Keeps your code clean, tested, and deploy-ready.
+
+🧪 Next Improvements (Roadmap)
 
 Authentication (JWT / API Key)
 
@@ -133,6 +158,8 @@ Rate limiting
 Caching (Redis)
 
 Docker & Cloud deployment
+
+Unit and integration tests for LLM endpoints
 
 📄 License
 
