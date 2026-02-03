@@ -2,7 +2,7 @@
 
 A production-ready AI backend API built with FastAPI and Python, designed for scalable AI-powered applications.
 
-This project demonstrates clean architecture, service abstraction, and real-world integration with Large Language Models (LLMs).
+This project demonstrates clean architecture, service abstraction, environment-based configuration, and real-world integration with Large Language Models (LLMs).
 
 🧠 Features
 
@@ -10,11 +10,11 @@ REST API for AI-powered text generation
 
 Clean separation of concerns (routers & services)
 
-Environment-based configuration
+Centralized environment configuration using config/settings.py
 
 Ready for testing, scaling, and deployment
 
-Interactive API documentation (Swagger)
+Interactive API documentation (Swagger UI)
 
 🏗️ Project Structure
 ai-backend-api/
@@ -26,8 +26,17 @@ ai-backend-api/
 ├── services/
 │   └── llm_service.py
 │
-└── routers/
-    └── ai_router.py
+├── routers/
+│   └── ai_router.py
+│
+├── config/
+│   ├── __init__.py
+│   └── settings.py
+│
+└── tests/
+    ├── __init__.py
+    ├── test_health.py
+    └── test_ai_endpoint.py
 
 🛠️ Technologies
 
@@ -41,7 +50,7 @@ Pydantic
 
 Uvicorn
 
-dotenv
+python-dotenv
 
 ⚙️ Setup
 1️⃣ Clone the repository
@@ -71,7 +80,7 @@ API Base URL: http://127.0.0.1:8000
 Swagger UI: http://127.0.0.1:8000/docs
 
 📡 API Endpoints
-POST /ai/chat
+POST /ai/generate
 
 Generate a response using an LLM.
 
