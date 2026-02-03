@@ -1,12 +1,9 @@
-import os
-from dotenv import load_dotenv
+from config.settings import settings
 from openai import OpenAI
-
-load_dotenv()
 
 class LLMService:
     def __init__(self):
-        api_key = os.getenv("OPENAI_API_KEY")
+        api_key = settings.openai_api_key
         if not api_key:
             raise ValueError("OPENAI_API_KEY not found in environment variables")
 
@@ -21,5 +18,4 @@ class LLMService:
             ],
             temperature=0.7
         )
-
         return response.choices[0].message.content
