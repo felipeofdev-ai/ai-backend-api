@@ -2,7 +2,7 @@
 
 A production-ready AI backend API built with FastAPI and Python, designed for scalable AI-powered applications.
 
-This project demonstrates clean architecture, service abstraction, environment-based configuration, and real-world integration with Large Language Models (LLMs).
+This project demonstrates clean architecture, service abstraction, environment-based configuration, centralized logging, and real-world integration with Large Language Models (LLMs).
 
 🧠 Features
 
@@ -11,6 +11,8 @@ REST API for AI-powered text generation
 Clean separation of concerns (routers & services)
 
 Centralized environment configuration using config/settings.py
+
+Centralized structured logging using config/logger.py
 
 Ready for testing, scaling, and deployment
 
@@ -34,10 +36,13 @@ ai-backend-api/
 │   ├── settings.py
 │   └── logger.py
 │
-└── tests/
-    ├── __init__.py
-    ├── test_health.py
-    └── test_ai_endpoint.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_health.py
+│   └── test_ai_endpoint.py
+│
+├── Dockerfile
+└── .dockerignore
 
 🛠️ Technologies
 
@@ -52,6 +57,8 @@ Pydantic
 Uvicorn
 
 python-dotenv
+
+Docker
 
 ⚙️ Setup
 1️⃣ Clone the repository
@@ -71,14 +78,23 @@ pip install -r requirements.txt
 Create a .env file based on .env.example:
 
 OPENAI_API_KEY=your_api_key_here
+APP_PORT=8000
 
 ▶️ Running the API
+Local (development)
 uvicorn main:app --reload
 
 
 API Base URL: http://127.0.0.1:8000
 
 Swagger UI: http://127.0.0.1:8000/docs
+
+Docker (production-ready)
+# Build Docker image
+docker build -t ai-backend-api .
+
+# Run container
+docker run -d -p 8000:8000 --env-file .env ai-backend-api
 
 📡 API Endpoints
 POST /ai/generate
