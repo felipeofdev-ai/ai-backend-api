@@ -1,63 +1,105 @@
-# AI Backend API
+🚀 AI Backend API
 
-This project is a clean and scalable backend API built with FastAPI and
-Generative AI. It exposes AI capabilities through REST endpoints, following
-good backend architecture practices.
+A production-ready AI backend API built with FastAPI and Python, designed for scalable AI-powered applications.
 
-The goal is to demonstrate how to integrate LLMs into a backend service
-with clear separation of concerns.
+This project demonstrates clean architecture, service abstraction, and real-world integration with Large Language Models (LLMs).
 
-## Features
+🧠 Features
 
-- REST API built with FastAPI
-- AI-powered text generation endpoint
-- AI-powered text summarization endpoint
-- Clean project structure (routers, services)
-- Environment-based configuration
+REST API for AI-powered text generation
 
-## Technologies
+Clean separation of concerns (routers & services)
 
-- Python 3
-- FastAPI
-- OpenAI API
-- Generative AI / LLMs
-- Backend architecture best practices
+Environment-based configuration
 
-## Project Structure
+Ready for testing, scaling, and deployment
+
+Interactive API documentation (Swagger)
+
+🏗️ Project Structure
 ai-backend-api/
-│── README.md
-│── requirements.txt
-│── .env.example
-│── main.py
-│── services/
-│ └── llm_service.py
-│── routers/
-│ └── ai_routes.py
+│
+├── main.py
+├── requirements.txt
+├── .env.example
+│
+├── services/
+│   └── llm_service.py
+│
+└── routers/
+    └── ai_router.py
 
-## How to Run
+🛠️ Technologies
 
-Create a virtual environment and install dependencies:
+Python 3.10+
 
-```bash
+FastAPI
+
+OpenAI API (LLMs)
+
+Pydantic
+
+Uvicorn
+
+dotenv
+
+⚙️ Setup
+1️⃣ Clone the repository
+git clone https://github.com/your-username/ai-backend-api.git
+cd ai-backend-api
+
+2️⃣ Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+
+3️⃣ Install dependencies
 pip install -r requirements.txt
-Create a .env file based on .env.example and add your API key.
 
-Run the API server:
+4️⃣ Configure environment variables
+
+Create a .env file based on .env.example:
+
+OPENAI_API_KEY=your_api_key_here
+
+▶️ Running the API
 uvicorn main:app --reload
 
-Access the interactive API documentation at:
-http://127.0.0.1:8000/docs
 
-Purpose
+API Base URL: http://127.0.0.1:8000
 
-Demonstrate backend API design
+Swagger UI: http://127.0.0.1:8000/docs
 
-Integrate Generative AI into services
+📡 API Endpoints
+POST /ai/chat
 
-Build production-ready foundations
+Generate a response using an LLM.
 
-Author
+Request
 
-Felipe Oliveira
-Python Developer | Backend | Automation | Generative AI
+{
+  "prompt": "Explain FastAPI in simple terms"
+}
 
+
+Response
+
+{
+  "response": "FastAPI is a modern Python web framework..."
+}
+
+🧪 Next Improvements (Roadmap)
+
+Unit and integration tests
+
+Authentication (JWT / API Key)
+
+Rate limiting
+
+Caching (Redis)
+
+Docker & Cloud deployment
+
+📄 License
+
+MIT License
