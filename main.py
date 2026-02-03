@@ -10,5 +10,12 @@ app = FastAPI(
 app.include_router(ai_router)
 
 @app.get("/")
+def root():
+    return {
+        "message": "AI Backend API is running",
+        "version": "1.0.0"
+    }
+
+@app.get("/health")
 def health_check():
     return {"status": "ok"}
