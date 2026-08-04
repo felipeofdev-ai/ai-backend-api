@@ -69,7 +69,7 @@ GitHub Actions (CI/CD)
 
 ⚙️ Setup
 1️⃣ Clone the repository
-git clone https://github.com/your-username/ai-backend-api.git
+git clone https://github.com/felipeofdev-ai/ai-backend-api.git
 cd ai-backend-api
 
 2️⃣ Create a virtual environment
